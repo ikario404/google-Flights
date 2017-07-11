@@ -1,0 +1,151 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Google Flights access</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <hr/>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Aller-simple</a></li>
+            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Aller-Retour</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+                <div class="col-md-offset-2 col-md-8 ">
+                    <form id="eventForm" method="POST" action="/results" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label">Date Aller</label>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" name="main_query" placeholder="ORY" />
+                            </div>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" name="main_query" placeholder="CAY" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label">Date</label>
+                            <div class="col-xs-3 date">
+                                <div class="input-group input-append date" id="datePicker">
+                                    <input type="text" class="form-control" name="date" placeholder="12-01-2017" />
+                                    <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 date">
+                                <div class="input-group input-append date" id="datePicker">
+                                    <input type="text" class="form-control" name="date" placeholder="12-01-2017" />
+                                    <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-4 col-xs-offset-5">
+                                <button type="submit" class="btn btn-default">Validate</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="profile">
+            	<div class="col-md-offset-2 col-md-8 ">
+                    <form id="eventForm" method="POST" action="/results" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label">Date Aller</label>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" name="main_query" placeholder="ORY" />
+                            </div>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" name="main_query" placeholder="CAY" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label">Date Retour</label>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" name="main_query" placeholder="ORY" />
+                            </div>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" name="main_query" placeholder="CAY" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label">Date</label>
+                            <div class="col-xs-3 date">
+                                <div class="input-group input-append date" id="datePicker">
+                                    <input type="text" class="form-control" name="date" placeholder="12-01-2017" />
+                                    <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 date">
+                                <div class="input-group input-append date" id="datePicker">
+                                    <input type="text" class="form-control" name="date" placeholder="12-01-2017" />
+                                    <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label">Tags</label>
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control" name="tags" placeholder="president, politics, us" />
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <hr/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8 ">
+            <h3>What to know ? </h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <ul>
+                <ol>At leat one adult as passenger</ol>
+                <ol> Aller- retour means 2 request</ol>
+                <ol> Fields are classical :
+                    <pre>kind
+					trips-
+					data+
+					kind
+					requestId
+					tripOption+
+				</pre>
+                </ol>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <h3>Time Filter</h3>
+            <h4>format</h4>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-md-offset-2 col-md-8'>
+            <h3>Origin / Destination</h3>
+            <h4>format</h4>
+        </div>
+    </div>
+    {% endblock %}
