@@ -12,22 +12,24 @@
     </div>
     <div class="row">
         <!-- Nav tabs -->
-        <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Aller-simple</a></li>
-            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Aller-Retour</a></li>
-        </ul>
+        <div class="col-md-offset-2 col-md-8 ">
+	        <ul class="nav nav-tabs" role="tablist">
+	            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Aller-simple</a></li>
+	            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Aller-Retour</a></li>
+	        </ul>
+        </div>
         <!-- Tab panes -->
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="home">
                 <div class="col-md-offset-2 col-md-8 ">
-                    <form id="eventForm" method="POST" action="/results" class="form-horizontal">
+                    <form id="eventForm" method="GET" action="/results" class="form-horizontal">
                         <div class="form-group">
                             <label class="col-xs-3 control-label">Date Aller</label>
                             <div class="col-xs-3">
-                                <input type="text" class="form-control" name="main_query" placeholder="ORY" />
+                                <input type="text" class="form-control" name="origin" placeholder="ORY" />
                             </div>
                             <div class="col-xs-3">
-                                <input type="text" class="form-control" name="main_query" placeholder="CAY" />
+                                <input type="text" class="form-control" name="destination" placeholder="CAY" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -48,7 +50,7 @@
 
                         <div class="form-group">
                             <div class="col-xs-4 col-xs-offset-5">
-                                <button type="submit" class="btn btn-default">Validate</button>
+                                <input type="submit" class="btn btn-default">
                             </div>
                         </div>
                     </form>
